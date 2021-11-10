@@ -414,7 +414,10 @@ class ExtendedRenderImage extends RenderBox {
     }
 
     return constraints.constrainSizeAndAttemptToPreserveAspectRatio(Size(
-        _image!.width.toDouble() / _scale, _image!.height.toDouble() / _scale));
+        _image!.width.toDouble() / _scale
+        ,
+        (_image!.height.toDouble()/_scale).toInt().toDouble()+1
+    ));
   }
 
   @override
